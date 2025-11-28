@@ -1,6 +1,6 @@
 # TON Wallet Balance Checker + Telegram Mini App
 
-Live Demo → https://ton-wallet-checker.vercel.app (بعد از دیپلوی لینک خودت رو بذار)
+Live Demo → https://ton-wallet-checker.vercel.app
 
 ## امکانات
 - وارد کردن هر آدرس TON → نمایش فوری بالانس
