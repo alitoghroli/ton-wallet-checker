@@ -9,7 +9,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [qr, setQr] = useState('');
-  const [tonConnectUI] = useTonConnectUI();
+  //const [tonConnectUI] = useTonConnectUI();
 
   const checkBalance = async () => {
     if (!address.trim()) return;
