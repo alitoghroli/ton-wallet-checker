@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
   const [address, setAddress] = useState('');
-  const [balance, setBalance] = useState(null);
+  const [balance, setBalance] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [qr, setQr] = useState('');
@@ -25,20 +25,23 @@ function App() {
       if (data.ok) {
         const bal = (BigInt(data.result.balance) / BigInt(1e9)).toString();
         setBalance(bal);
-        QRCode.toDataURL(address, { width: 300 }, (err, url) => setQr(url));
+        QRCode.toDataURL(address, { width: 300 }, (_err: any, url: string) => {
+          setQr(url);
+        });
       } else {
-        setError('آدرس نامعتبر یا خطای API');
+        setError('آدرس نامعتبر');
       }
     } catch (e) {
       setError('خطای شبکه – VPN رو چک کن');
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
     <div className="container">
       <h1>TON Wallet Checker</h1>
-      <p>بالانس + QR کد + کاملاً آماده تلگرام مینی‌اپ</p>
+      <p>بالانس + QR کد + آماده تلگرام مینی‌اپ</p>
 
       <TonConnectButton />
 
