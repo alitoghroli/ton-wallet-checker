@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TonConnectButton, useTonConnectUI } from '@tonconnect/ui-react';
+import { TonConnectButton } from '@tonconnect/ui-react';
 import QRCode from 'qrcode';
 import './App.css';
 
